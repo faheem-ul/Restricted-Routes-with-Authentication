@@ -1,6 +1,7 @@
 import React from "react";
 
 import Home from "./Components/Home/Home";
+import GetUsers from "./Components/GetUsers/GetUsers";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="nav">
       <Router>
-        <Link to="/home" style={linkstyle}>
+        <Link to="/" style={linkstyle}>
           Home Page
         </Link>
         <Link to="/users" style={linkstyle}>
@@ -24,7 +25,8 @@ function App() {
         </Link>
 
         <Routes>
-          <Route path="/home" element={<Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/users" element={<GetUsers />}></Route>
         </Routes>
       </Router>
     </div>
