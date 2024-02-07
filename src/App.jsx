@@ -5,6 +5,7 @@ import GetUsers from "./Components/GetUsers/GetUsers";
 import UserDetails from "./Components/UserDetails/UserDetails";
 import AddUser from "./Components/AddUser/AddUser";
 import SignUp from "./Components/SignUp/SignUp";
+import Login from "./Components/Login/Login";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/userdetails/:id" element={<UserDetails />}></Route>
           <Route path="/adduser" element={<AddUser />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
       </Router>
     </div>
