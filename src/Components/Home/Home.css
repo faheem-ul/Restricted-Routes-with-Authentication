@@ -23,6 +23,7 @@
   .homePara {
     line-height: 1.6;
     margin-top: 20px;
+    width: 100vh;
   }
   
   .HomeSignupBtn, .HomeLoginBtn{
