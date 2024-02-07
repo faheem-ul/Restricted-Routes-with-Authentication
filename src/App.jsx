@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./Components/Home/Home";
 import GetUsers from "./Components/GetUsers/GetUsers";
 import UserDetails from "./Components/UserDetails/UserDetails";
+import AddUser from "./Components/AddUser/AddUser";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/users" element={<GetUsers />}></Route>
           <Route path="/userdetails/:id" element={<UserDetails />}></Route>
+          <Route path="/adduser" element={<AddUser />}></Route>
         </Routes>
       </Router>
     </div>
