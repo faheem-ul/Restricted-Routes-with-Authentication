@@ -2,6 +2,7 @@ import React from "react";
 
 import Home from "./Components/Home/Home";
 import GetUsers from "./Components/GetUsers/GetUsers";
+import UserDetails from "./Components/UserDetails/UserDetails";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/users" element={<GetUsers />}></Route>
+          <Route path="/userdetails/:id" element={<UserDetails />}></Route>
         </Routes>
       </Router>
     </div>
