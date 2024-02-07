@@ -29,6 +29,12 @@
       "name": "faheem",
       "email": "faheem@gmail.com",
       "number": "000000"
+    },
+    {
+      "id": "7a9f",
+      "email": "faheem@gmail.com",
+      "password": "1234",
+      "number": "0000000"
     }
   ]
 }
