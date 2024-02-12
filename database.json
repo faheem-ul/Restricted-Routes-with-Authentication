@@ -41,6 +41,12 @@
       "email": "abc@gmail.com",
       "password": "1234",
       "number": "00000000"
+    },
+    {
+      "id": "fb92",
+      "email": "test@gmail.com",
+      "password": "1234",
+      "number": "000000"
     }
   ]
 }
