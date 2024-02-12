@@ -1,16 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { setUserInLocalStorageonLogin } from "../../utils/LocalStorage/LocalStorage";
 import UseGetUsers from "../../hooks/UseGetUsers";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
+import AuthedContext from "../../Context/Context";
+import AuthedContextProvider from "../../Context/AuthedContext";
 
 function Login() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const { users, loading } = UseGetUsers();
   const navigate = useNavigate();
+
+  const { user } = useContext(AuthedContext);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
