@@ -2,6 +2,8 @@ import { React, useState } from "react";
 import axios from "axios";
 import { setUserInLocalStorageonSignUp } from "../../utils/LocalStorage/LocalStorage";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./SignUp.css";
 
 function SignUp() {
@@ -9,7 +11,6 @@ function SignUp() {
   const [userPassword, setUsersPassword] = useState("");
   const [userNumber, setUserNumber] = useState("");
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -21,10 +22,18 @@ function SignUp() {
 
     axios
       .post("http://localhost:3000/users", newUser)
-      .then((res) => console.log("new user added", res))
+      .then((res) => {
+        setUserInLocalStorageonSignUp(userEmail, userPassword, userNumber);
+        toast.success("Signup successful!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 3000,
+        });
+
+        console.log("new user added", res);
+      })
+
       .catch((err) => console.log("error in adding new user", err));
 
-    setUserInLocalStorageonSignUp(userEmail, userPassword, userNumber);
     navigate("/users");
   };
 
@@ -58,6 +67,7 @@ function SignUp() {
           Submit
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }
